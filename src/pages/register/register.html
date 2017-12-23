@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ลงทะเบียน</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form novalidate [formGroup]="myForm" (ngSubmit)="signup()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>ชื่อ-สกุล</ion-label>
+        <ion-input formControlName="fullname" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <div padding>
+        <button ion-button block type="submit" [disabled]="!myForm.valid">สร้างบัญชีใหม่</button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
