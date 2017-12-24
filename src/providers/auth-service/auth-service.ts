@@ -29,11 +29,12 @@ export class AuthServiceProvider {
       'password': password
     }
     //ใช้ method post() สำหรับส่ง data เพื่อไปบันทึกข้อมูล
-    return this.http.post('https://codingthailand.com/api/insert_user.php', data, {headers: myHeader}).map((res: Response) => {
+    return this.http.post('http://127.0.0.1:7777/newuser', data).map((res: Response) => {
         let data = res.json(); //รับ json จาก Backend แล้ว return ออกไปให้เพจ
         return data;
       }).catch(this.handleError);
   }
+  
   private handleError(error: any) {
     return Observable.throw(error.json().errorMessage || 'Server เกิดข้อผิดพลาด');
   }
