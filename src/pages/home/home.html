@@ -1,29 +1,35 @@
-<!--<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
--->
-<ion-content padding >
-    <div text-center>
-    <img src="../assets/imgs/unity-new.png" />​
-    <br>
- 
-        <br>
-        <button ion-button icon-start (click)="login()" >
-            <ion-icon ></ion-icon>
-        Login
-          </button>
-          
-          <button ion-button icon-end  (click)="register()">
-           Register
-            <ion-icon ></ion-icon>
-          </button>
-          <button ion-button round  (click)="login()">Round Button</button>
-      </div>
+<ion-content padding>
 
-      
-     
+    <form novalidate [formGroup]="loginForm">
+  <ion-row class="login-logo">
+    <ion-col>
+      <img src="../assets/imgs/unity-new.png" height="442" width="442" />
+    </ion-col>
+  </ion-row>
+  <ion-row class="login-form">
+    <ion-col>
+           <ion-list inset>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="person"></ion-icon>
+          </ion-label>
+          <ion-input [(ngModel)]="username" placeholder="username"  formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="lock"></ion-icon>
+          </ion-label>
+          <ion-input [(ngModel)]="password" placeholder="password"  formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+       <button ion-button (click)="login()" primary class="login-button">Login</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button (click)="register()" class="create-account">Create an Account</button>
+    </ion-col>
+  </ion-row>
+    </form>
 </ion-content>
+

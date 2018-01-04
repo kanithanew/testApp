@@ -1,14 +1,18 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+<ion-icon name="menu"></ion-icon>
+</button>
     <ion-title>ลงทะเบียน</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <form novalidate [formGroup]="myForm" (ngSubmit)="signup()">
     <ion-list>
+        <ion-item>
+            <ion-label floating>รหัสบัตรประชาชน</ion-label>
+            <ion-input formControlName="idcard" type="text"></ion-input>
+          </ion-item>
       <ion-item>
         <ion-label floating>ชื่อ-สกุล</ion-label>
         <ion-input formControlName="fullname" type="text"></ion-input>
